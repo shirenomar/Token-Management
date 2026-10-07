@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+}
+
+/* Light Theme (Untitled UI Pristine Light) */
+[data-theme="light"] body, body.light {
+  color: #101828;
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.03) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Dark Theme (Untitled UI Modern Obsidian) */
+[data-theme="dark"] body, body.dark {
+  color: #F9FAFB;
+  background-color: #0B0F17;
+  background-image: 
+    radial-gradient(at 50% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.9) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+/* Untitled UI Card & Panel Utilities */
+.dark .glass-panel {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.06), 0 1px 2px 0 rgba(16, 24, 40, 0.04);
+}
+
+.dark .glass-input {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F9FAFB;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.light .glass-input {
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  color: #101828;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+}
+
+.glass-input {
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.glass-input:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* Untitled UI Compound Badges */
+.uui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+.uui-badge-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.uui-badge-success {
+  background-color: #ECFDF5;
+  color: #047857;
+  border-color: #A7F3D0;
+}
+.dark .uui-badge-success {
+  background-color: rgba(6, 78, 59, 0.3);
+  color: #6EE7B7;
+  border-color: rgba(5, 150, 105, 0.4);
+}
+.uui-badge-success .uui-badge-dot {
+  background-color: #10B981;
+}
+
+.uui-badge-warning {
+  background-color: #FFFBEB;
+  color: #B45309;
+  border-color: #FDE68A;
+}
+.dark .uui-badge-warning {
+  background-color: rgba(120, 53, 15, 0.3);
+  color: #FDE047;
+  border-color: rgba(217, 119, 6, 0.4);
+}
+.uui-badge-warning .uui-badge-dot {
+  background-color: #F59E0B;
+}
+
+.uui-badge-error {
+  background-color: #FEF2F2;
+  color: #B91C1C;
+  border-color: #FECACA;
+}
+.dark .uui-badge-error {
+  background-color: rgba(127, 29, 29, 0.3);
+  color: #FCA5A5;
+  border-color: rgba(220, 38, 38, 0.4);
+}
+.uui-badge-error .uui-badge-dot {
+  background-color: #EF4444;
+}
+
+.uui-badge-indigo {
+  background-color: #EEF2FF;
+  color: #4338CA;
+  border-color: #C7D2FE;
+}
+.dark .uui-badge-indigo {
+  background-color: rgba(49, 46, 129, 0.4);
+  color: #A5B4FC;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+.uui-badge-indigo .uui-badge-dot {
+  background-color: #6366F1;
+}
+
+.uui-badge-gray {
+  background-color: #F8FAFC;
+  color: #334155;
+  border-color: #E2E8F0;
+}
+.dark .uui-badge-gray {
+  background-color: #1E293B;
+  color: #CBD5E1;
+  border-color: #334155;
+}
+.uui-badge-gray .uui-badge-dot {
+  background-color: #64748B;
+}
+
+/* Untitled UI Buttons */
+.uui-btn-primary {
+  background-color: #4F46E5;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: 1px solid #4338CA;
+}
+.uui-btn-primary:hover {
+  background-color: #4338CA;
+}
+.uui-btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.uui-btn-secondary {
+  background-color: #FFFFFF;
+  color: #344054;
+  font-weight: 600;
+  border: 1px solid #D0D5DD;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.dark .uui-btn-secondary {
+  background-color: #1E293B;
+  color: #E2E8F0;
+  border-color: #334155;
+}
+.uui-btn-secondary:hover {
+  background-color: #F8FAFC;
+  color: #1D2939;
+}
+.dark .uui-btn-secondary:hover {
+  background-color: #334155;
+  color: #FFFFFF;
+}
+
+/* Matrix Table Styling */
+.matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.matrix-table th, .matrix-table td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+}
+
+.dark .matrix-table th, .dark .matrix-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.light .matrix-table th, .light .matrix-table td {
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.dark .matrix-table th {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: #94A3B8;
+  background: #0F172A;
+}
+
+.light .matrix-table th {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  color: #475569;
+  background: #F8FAFC;
+}
+
+.dark .matrix-table tr:hover td {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.light .matrix-table tr:hover td {
+  background: #F8FAFC;
+}
+
